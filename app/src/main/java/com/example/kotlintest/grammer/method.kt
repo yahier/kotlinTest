@@ -3,13 +3,18 @@ package com.example.kotlintest.grammer
 /**
  * 测试函数
  */
-fun main(args: Array<String>) {
+fun main() {
     test1()
     test1(4)
 
     asList(1, 2, 3)
 
     test2()
+
+    doForever()
+    println(sum1(1, 2))
+    println(sum2(1, 2))
+    println(sum3(1, 2))
 }
 
 /**
@@ -36,5 +41,20 @@ fun test2() {
     fun sum(a: Int, b: Int): Int {
         return a + b
     }
-    println("test2:"+sum(2, 3))
+    println("test2:" + sum(2, 3))
 }
+
+fun doForever(): Unit {
+    println("do something...")
+}
+
+/**
+ * 单表达式函数可以简化为下面sum2 sum3
+ */
+fun sum1(x: Int = 0, y: Int): Int {
+    return x + y
+}
+
+fun sum2(x: Int = 0, y: Int): Int = x + y
+
+fun sum3(x: Int = 0, y: Int) = x + y
