@@ -3,21 +3,19 @@ package com.example.kotlintest.grammer
 import android.view.View
 
 /**
- * Kotlin 的对象声明是定义单例的一种方式，是延迟初始化的。
+Kotlin 的对象声明是定义单例的一种方式，是延迟初始化的。
 Kotlin 的对象表达式可以用来替代 Java 的匿名内部类，是实时创建的。
 Kotlin 的伴生对象可以用来替代 Java 的静态属性和静态方法，是在伴生对象所在类加载时初始化的。
  */
 fun main() {
-    Singleton1.printlnHelloWorld()
+    Singleton.printlnHelloWorld()
     testAy()
-    Student.changeMarks("goHome")
-}
+    println("mark1 is " + (Student.marks))
+    Student.changeMarks("B")
+    println("mark2 is " + (Student.marks))
 
-/**
- * 对象申明，实现单例模式
- */
-object Singleton1 {
-    fun printlnHelloWorld() = println("Singleton1 hello world")
+    var color = Color.BLUE
+    println("color信息 " + color.colorName + "" + color.ordinal)
 }
 
 /**
@@ -50,6 +48,7 @@ class Outter1 {
     }
 }
 
+
 class Outter2 {
     val str: String = "this property is from outter2 class"
 
@@ -58,10 +57,7 @@ class Outter2 {
      */
     inner class Inner {
         fun foo() = println("$str")
-
         var a: Int = 0
-
-
     }
 }
 
@@ -74,17 +70,26 @@ enum class Color constructor(var colorName: String, var value: Int) {
     BLUE("蓝色", 3)
 }
 
+
+/**
+ * 对象申明，实现单例模式
+ */
+object Singleton {
+    fun printlnHelloWorld() = println("Singleton1 hello world")
+}
+
+
 /**
  * 测试 伴生对象.达成java的静态方法和属性
  */
 class Student {
     /**
-     * 伴生对象的成员类似于 Java 的静态成员
+     * todo 伴生对象的成员类似于 Java 的静态成员
      */
     companion object {
         @JvmField //此关键字允许java使用此静态属性
         public var username = "Tony"
-        private var marks = "A"
+        public var marks = "A"
 
         @JvmStatic //此关键字允许java使用此静态方法
         fun printMarks() = "The ${this.username}'s mark is ${this.marks}"
@@ -96,11 +101,12 @@ class Student {
 }
 
 /**
- * 数据类使用data来装饰
+ * todo 数据类使用data来装饰
  * 会自动生成以下方法
  * equals()/hashCode()方法  toString()方法 componentN()方法 copy()方法
  */
 data class User(var name: String, var password: String)
+
 
 /**
  * 密封类
@@ -110,6 +116,7 @@ sealed class Mammal(val name: String)
 class Dog(dogName: String) : Mammal(dogName)
 class Horse(horseName: String) : Mammal(horseName)
 class Human(humanName: String, val job: String) : Mammal(humanName)
+
 
 fun greetMammal(mammal: Mammal) = when (mammal) {
     is Dog -> "Hello ${mammal.name}"

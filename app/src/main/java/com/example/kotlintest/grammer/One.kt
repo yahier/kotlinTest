@@ -24,9 +24,10 @@ fun set() {
     val a = 4  //常量 自动推断类型
     var b = 5  //变量
 
+    lateinit var str:String
     println(a + haifei)
 
-    println("Name: $userName")
+    println("Name:$userName")
 }
 
 /**
@@ -40,10 +41,10 @@ fun testArray() {
     }
 
     var intArray: IntArray = intArrayOf(1, 2, 3)
-    val stringArray: Array<String> = arrayOf("a", "b", "c")
+    val stringArray = arrayOf("a", "b", "c")
 
     for (i in 0..2) {
-        println(stringArray[i] + intArray.get(i))
+        println(stringArray[i] + intArray[i])
     }
 
 }

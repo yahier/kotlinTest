@@ -12,6 +12,8 @@ fun main(args: Array<String>) {
 }
 
 fun testIf(a: Int): Int {
+    val i = 1002
+    var a = if (i > 100) i else 100
     return if (a > 10) 100 else 50
 }
 
