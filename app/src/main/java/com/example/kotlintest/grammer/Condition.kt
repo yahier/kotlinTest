@@ -5,10 +5,26 @@ package com.example.kotlintest.grammer
  */
 fun main(args: Array<String>) {
     var sheldom = Person("copper")
+    var raxi = Person("raxi", false)
     var amy = Person(24)
-    println(amy.age)
+    //println(amy.age)
+    testFor()
 
 
+}
+
+
+fun testFor() {
+    //一次跳两个
+    for (i in 2..9 step 2) {
+        println((i))
+    }
+    println()
+
+    //递减 一次跳两个
+    for (i in 20 downTo 10 step 2) {
+        println(i)
+    }
 }
 
 fun testIf(a: Int): Int {

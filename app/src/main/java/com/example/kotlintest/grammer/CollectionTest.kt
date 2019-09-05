@@ -33,6 +33,16 @@ fun testList() {
 
 }
 
+/**
+ * 指定类
+ */
+fun testInit() {
+    val set = hashSetOf(1, 7, 53)
+    val list = arrayListOf(1, 7, 53)
+    val map = hashMapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
+
+}
+
 fun testMap() {
     val map = mapOf(1 to "a", 2 to "b", 3 to "c")
     map.entries.forEach { println("$it") }
