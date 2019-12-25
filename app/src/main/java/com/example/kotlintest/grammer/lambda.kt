@@ -1,7 +1,7 @@
 package com.example.kotlintest.grammer
 
 /**
- * 测试 函数作为参数
+ * 测试 函数作为参数  参考 http://ddrv.cn/a/594638
  */
 fun main() {
     action2 {
