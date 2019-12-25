@@ -17,7 +17,8 @@ fun testList() {
     println()
     list.sorted().forEach { print(it) }//todo 排序
     println()
-    list.map { it * it }.forEachIndexed { index, i -> println("index $index --- value $i") }//todo 映射
+    list.map { it * it }
+        .forEachIndexed { index, i -> println("index $index --- value $i") }//todo 映射
 
     println("有元素满足条件:" + list.any { it < 2 }) //todo
     println("所有元素满足条件:" + list.all { it < 9 })
@@ -26,12 +27,28 @@ fun testList() {
     listMutable.add("橘子洲头5")
     listMutable.forEach { println(it + "") }
 
+    listMutable.forEach() {
+        print(it)
+    }
+
+    //todo 怎么样用最原始的形式调用呢
+    listMutable.YaforEach {
+
+    }
+
     //var a = list.get(9)  //如果越界 会直接崩溃
     val b = list.getOrElse(9) { 0 } //越界时 提供默认安全值
     val c = list.getOrNull(9) //越界时 提供null
     println("b is $b,c is $c")
 
 }
+
+//模仿forEach
+fun <T> Iterable<T>.YaforEach(we: (T) -> Unit): Unit {
+    for (element in this) we(element)
+}
+
+
 
 /**
  * 指定类

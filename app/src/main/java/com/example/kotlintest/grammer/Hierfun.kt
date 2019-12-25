@@ -6,16 +6,5 @@ package com.example.kotlintest.grammer
 open class Hierfun<T> {
 
 
-    fun double(x: Int): Int {
-        return 2 * x
-    }
-
-    /**
-     * 定义参数为一个方法
-     */
-    fun triple(double: (Int) -> Int): (Int) -> Int {
-        return { x -> double(x) + x }
-    }
-
 
 }
