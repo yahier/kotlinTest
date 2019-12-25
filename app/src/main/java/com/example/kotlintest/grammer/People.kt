@@ -1,6 +1,6 @@
 package com.example.kotlintest.grammer
 
-open class Person public constructor(firstName: String, isHappy: Boolean = true) {
+open class Person (firstName: String, isHappy: Boolean = true) {
     var firstName: String
     var age: Int? = 0
 

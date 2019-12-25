@@ -4,17 +4,18 @@ package com.example.kotlintest.grammer
  * 测试函数
  */
 fun main() {
-    test1()
-    test1(4)
-
-    asList(1, 2, 3)
-
-    test2()
-
-    doForever()
-    println(sum1(1, 2))
-    println(sum2(1, 2))
-    println(sum3(1, 2))
+//    test1()
+//    test1(4)
+//
+//    asList(1, 2, 3)
+//
+//    test2()
+//
+//    doForever()
+//    println(sum1(1, 2))
+//    println(sum2(1, 2))
+//    println(sum3(1, 2))
+    println(sum4())
 }
 
 /**
@@ -58,3 +59,11 @@ fun sum1(x: Int = 0, y: Int): Int {
 fun sum2(x: Int = 0, y: Int): Int = x + y
 
 fun sum3(x: Int = 0, y: Int) = x + y
+
+/**
+ * 参数 可为空，设置默认值
+ */
+fun sum4(x: Int? = 8): Int? {
+    return x?.plus(2)
+}
+
