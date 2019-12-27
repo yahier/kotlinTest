@@ -71,7 +71,7 @@ fun test4(funX: (Int) -> Int): (Int) -> Int {
 }
 
 
-fun test(): String {
+private fun test(): String {
     return "你想干什么"
 }
 
