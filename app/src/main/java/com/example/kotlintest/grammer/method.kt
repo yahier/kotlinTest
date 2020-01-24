@@ -5,7 +5,8 @@ package com.example.kotlintest.grammer
  */
 fun main() {
     test1()
-    test1(4)
+    //todo
+    test1(b = 4, a = 5) //具名传参
 
     asList(1, 2, 3)
 
@@ -20,8 +21,8 @@ fun main() {
 /**
  * 参数有默认值
  */
-fun test1(a: Int = 2) {
-    println(a)
+fun test1(a: Int = 2, b: Int = 3) {
+    println("a is $a,b is $b")
 }
 
 /**

@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
 fun test1() {
     var a: Byte = 1
     var b: Int = a.toInt()
-    var name: String? = null
+    var name: String? = ""
     if (name!!.isBlank()) {
         println("name is empty")
     }
