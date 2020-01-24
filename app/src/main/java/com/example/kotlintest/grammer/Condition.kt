@@ -10,14 +10,16 @@ fun main(args: Array<String>) {
     //println(amy.age)
     testFor()
 
+    var a = 1.5
+
 
 }
 
 
 fun testFor() {
     //一次跳两个
-    for (i in 2..9 step 2) {
-        println((i))
+    for (i in 0..3) {
+        println("i is "+i)
     }
     println()
 

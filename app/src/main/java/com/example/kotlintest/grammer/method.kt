@@ -59,3 +59,11 @@ fun sum1(x: Int = 0, y: Int): Int {
 fun sum2(x: Int = 0, y: Int): Int = x + y
 
 fun sum3(x: Int = 0, y: Int) = x + y
+
+/**
+ * 参数 可为空，设置默认值
+ */
+fun sum4(x: Int? = 8): Int? {
+    return x?.plus(2)
+}
+
