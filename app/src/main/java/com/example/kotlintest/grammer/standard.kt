@@ -79,8 +79,8 @@ private fun testLet() {
  */
 private fun takeIf() {
     var name: String? = "bingo"
-    name = name.takeIf {
-        it?.length == 4
+    name = name?.takeIf {
+        it.length == 4
     }
     println("name is $name")
 }

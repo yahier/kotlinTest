@@ -28,13 +28,30 @@ fun main() {
     action1(2, func1)
 
 
+    //todo 这里的传参很奇怪。入参的int并没有赋值呀
     logDebug {
-        "你想干什么"
+        "$it"
     }
 
-    logDebug() {
-        "去哪里呢"
+    logDebug(2) {
+        "$it"
     }
+}
+
+/**
+ * 此方法接收一个返回String类型的方法
+ */
+private fun logDebug(a: Int, method: (Int) -> String) {
+    if (method(a) == "2") {
+        println("value is 2")
+    }
+}
+
+/**
+ * 此方法接收一个返回String类型的方法
+ */
+private fun logDebug(method: (Int) -> String) {
+    println(method)
 }
 
 fun invoke() {
@@ -83,13 +100,6 @@ fun action1(first: Int, callback: (Int) -> Boolean) {
     } else {
         println("回调函数返回值 false")
     }
-}
-
-/**
- * 此方法接收一个返回String类型的方法
- */
-private fun logDebug(method: (Int) -> String) {
-    println(method)
 }
 
 

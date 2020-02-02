@@ -8,18 +8,18 @@ fun main(args: Array<String>) {
     var raxi = Person("raxi", false)
     var amy = Person(24)
     //println(amy.age)
-    testFor()
+    //testFor()
 
     var a = 1.5
+    testIf(12)
 
 
 }
 
 
 fun testFor() {
-    //一次跳两个
-    for (i in 0..3) {
-        println("i is "+i)
+    for (i in 0 until 3) {
+        println("i is " + i)
     }
     println()
 
@@ -30,9 +30,8 @@ fun testFor() {
 }
 
 fun testIf(a: Int): Int {
-    val i = 1002
-    var a = if (i > 100) i else 100
-    return if (a > 10) 100 else 50
+    val i = if (a > 100) a else 100
+    return i
 }
 
 fun test2(x: Int) {

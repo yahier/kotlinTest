@@ -7,13 +7,42 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+
+    <TextView android:id="@+id/tv1"
+              android:background="#c0F1F1"
+              android:layout_width="wrap_content"
+              android:layout_marginLeft="20dp"
+              android:layout_marginTop="16dp"
+              app:layout_constraintLeft_toRightOf="parent"
+              android:layout_height="100dp"
+              android:gravity="center"
+              android:text="色彩1"
+              app:layout_constraintTop_toBottomOf="parent"
+              android:textSize="20dp" tools:ignore="MissingConstraints"/>
+
+    <!--  为什么加上这个，反而不显示了  app:layout_constraintTop_toBottomOf="parent" -->
     <TextView
+            android:background="#cccccc"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+            android:id="@+id/tv2"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="色彩2"
+            app:layout_constraintLeft_toRightOf="@id/tv1"/>
+
+    <TextView
+            android:visibility="gone"
+            android:gravity="center"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+            android:id="@+id/tv3"
+            app:layout_constraintTop_toBottomOf="@+id/tv2"
+            android:textSize="20dp"
+            android:background="#dddddd"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="色彩3"
+            app:layout_constraintLeft_toRightOf="@id/tv1"/>
 
 </android.support.constraint.ConstraintLayout>

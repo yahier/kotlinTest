@@ -12,18 +12,19 @@ fun main() {
  * 测试list，set与之类似
  */
 fun testList() {
-    val list = listOf(1, 7, 3, 8, 5, 6, 4, 2) //todo 只读list
-    list.filter { it % 2 == 0 }.forEach { print(it) }//todo 过滤
+    //todo 为什么这些函数 可以直接调用，是因为是内置函数吗？但是函数本身并没有internal注解呀
+    val list = listOf(1, 7, 3, 8, 5, 6, 4, 2) //只读list
+    list.filter { it % 2 == 0 }.forEach { print(it) }//过滤
     println()
-    list.sorted().forEach { print(it) }//todo 排序
+    list.sorted().forEach { print(it) }//排序
     println()
     list.map { it * it }
         .forEachIndexed { index, i -> println("index $index --- value $i") }//todo 映射
 
-    println("有元素满足条件:" + list.any { it < 2 }) //todo
+    println("有元素满足条件:" + list.any { it < 2 })
     println("所有元素满足条件:" + list.all { it < 9 })
 
-    val listMutable = mutableListOf("问苍茫大地1", "谁主沉浮2", "独立寒秋3", "湘江北去4") //todo 可读可改
+    val listMutable = mutableListOf("问苍茫大地1", "谁主沉浮2", "独立寒秋3", "湘江北去4") //可读可写
     listMutable.add("橘子洲头5")
     listMutable.forEach { println(it + "") }
 
@@ -31,7 +32,6 @@ fun testList() {
         print(it)
     }
 
-    //todo 怎么样用最原始的形式调用呢
     listMutable.YaforEach {
 
     }
