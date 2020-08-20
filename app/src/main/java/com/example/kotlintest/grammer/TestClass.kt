@@ -23,20 +23,33 @@ fun main() {
  */
 fun testAy() {
     val view: View? = null
-    view?.setOnClickListener(object : View.OnClickListener {
-        override fun onClick(v: View?) {
-            //pass
-        }
-    })
+    view?.setOnClickListener {
+        //pass
+    }
     view?.setOnClickListener {
         //pass
     }
     var a: Int = 12
     if (a == 9) print(12)
+
+    //为什么不能缩写呢
+    setGoListener(object : GoListener {
+        override fun onGo() {
+
+        }
+    })
+}
+
+fun setGoListener(listener: GoListener) {
+    listener.onGo()
 }
 
 
-class Outter1 {
+interface GoListener {
+    fun onGo()
+}
+
+class Outter {
     val str1: String = "this property is from outter1 class"
 
     /**
@@ -68,6 +81,43 @@ enum class Color constructor(var colorName: String, var value: Int) {
     RED("红色", 1),
     GREEN("绿色", 2),
     BLUE("蓝色", 3)
+}
+
+
+enum class State {
+    IDLE, RUNNING, FINISHED                           // 1
+}
+
+
+fun testEnumState() {
+    val state = State.RUNNING                         // 2
+    val message = when (state) {                      // 3
+        State.IDLE -> "It's idle"
+        State.RUNNING -> "It's running"
+        State.FINISHED -> "It's finished"
+    }
+    println(message)
+}
+
+
+/**
+ * dayRates 对象表达式
+ */
+fun rentPrice(standardDays: Int, festivityDays: Int, specialDays: Int): Unit {  //1
+
+    /**
+     * point
+     */
+    val dayRates = object {                                                     //2
+        var standard: Int = 30 * standardDays
+        var festivity: Int = 50 * festivityDays
+        var special: Int = 100 * specialDays
+    }
+
+    val total = dayRates.standard + dayRates.festivity + dayRates.special       //3
+
+    print("Total price: $$total")                                               //4
+
 }
 
 

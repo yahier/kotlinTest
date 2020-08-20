@@ -1,4 +1,4 @@
- package yahier.com.myapplication.grammer
+package yahier.com.myapplication.grammer
 
 import java.util.*
 
@@ -24,7 +24,7 @@ fun set() {
     val a = 4  //常量 自动推断类型
     var b = 5  //变量
 
-    lateinit var str:String
+    lateinit var str: String
     println(a + haifei)
 
     println("Name:$userName")
@@ -47,5 +47,19 @@ fun testArray() {
         println(stringArray[i] + intArray[i])
     }
 
+}
+
+
+/**
+ *
+Kotlin uses == for structural comparison and === for referential comparison.
+More precisely, a == b compiles down to a == null ? b == null : a.equals(b).
+ */
+fun testCompairson() {
+    val authors = setOf("Shakespeare", "Hemingway", "Twain")
+    val writers = setOf("Twain", "Shakespeare", "Hemingway")
+
+    println(authors == writers)   // true because it calls authors.equals(writers) and sets ignore element order.
+    println(authors === writers)  // false because authors and writers are distinct references.
 }
 

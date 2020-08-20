@@ -1,12 +1,11 @@
 package com.example.kotlintest.grammer.androidx
 
-import android.arch.lifecycle.LiveData
-import android.arch.paging.DataSource
-import android.arch.paging.LivePagedListBuilder
-import android.arch.paging.PageKeyedDataSource
-import android.arch.paging.PagedList
+//import android.arch.lifecycle.LiveData
+//import android.arch.paging.DataSource
+//import android.arch.paging.LivePagedListBuilder
+//import android.arch.paging.PageKeyedDataSource
+//import android.arch.paging.PagedList
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 
 /**
  * 测试分页，彻底的失败 对象都不知道怎么建立起来

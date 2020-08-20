@@ -1,4 +1,4 @@
-package com.example.kotlintest.grammer.androidx
+package com.example.kotlintest.androidx
 
 /**
  *   参考 https://developer.android.google.cn/reference/kotlin/androidx/core/text/package-summary?hl=zh_cn

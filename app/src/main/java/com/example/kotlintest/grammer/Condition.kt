@@ -13,6 +13,7 @@ fun main(args: Array<String>) {
     var a = 1.5
     testIf(12)
 
+    print("haha "+a.inc())
 
 }
 

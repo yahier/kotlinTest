@@ -1,6 +1,7 @@
 package com.example.kotlintest.grammer.androidx
 
-import android.support.v4.util.Pools
+import androidx.core.util.Pools
+
 
 /**
  * 对象池测试  参考 https://developer.android.google.cn/reference/kotlin/androidx/core/util/package-summary?hl=zh_cn
