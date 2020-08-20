@@ -26,23 +26,33 @@ android {
 //        sourceCompatibility JavaVersion.VERSION_1_8
 //    }
 
-    kotlinOptions{
+    kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:1.0.0"
+    /**Android KTX 官方Overview https://developer.android.google.cn/kotlin/ktx*/
+    /** android ktx list https://developer.android.google.cn/kotlin/ktx/extensions-list*/
     //implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-    //ktx
+    //ktx core
     implementation "androidx.core:core-ktx:1.3.1"
-    //
+    //ktx collection
     implementation "androidx.collection:collection-ktx:1.1.0"
+    //ktx fragment
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+    //ktx lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    //ktx palette
+    implementation "androidx.palette:palette-ktx:1.0.0"
+    //ktx room Room extensions add coroutines support for database transactions.
+    implementation "androidx.room:room-ktx:2.2.5"
 
-     //协程
+    //协程
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0'
     testImplementation 'junit:junit:4.12'

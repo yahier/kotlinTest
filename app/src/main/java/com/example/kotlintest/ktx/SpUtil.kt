@@ -15,8 +15,6 @@ class SpUtil {
         sharedPreferences.edit1 {
             putBoolean("key", value)
         }
-
-
     }
 }
 
