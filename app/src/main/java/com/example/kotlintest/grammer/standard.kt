@@ -7,10 +7,10 @@ private fun main() {
     //testRun()
     //testWith()
     //testLet()
-    testApply()
-    testAlso()
-    //takeUnless()
-    //testRepeat()
+    //testApply()
+    //testAlso()
+    takeUnless()
+    testRepeat()
 }
 
 

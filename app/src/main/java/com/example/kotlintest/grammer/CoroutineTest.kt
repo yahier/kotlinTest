@@ -5,10 +5,12 @@ import kotlinx.coroutines.*
 import java.io.File
 
 /**
- * 测试 协程.  todo 效果很奇怪，很多时候感觉完全没有执行
+ * 测试 协程.   效果很奇怪，很多时候感觉完全没有执行.todo 协程的测试需要在Android的环境中
  */
 
 fun main(args: Array<String>) {
+    println("主 threadId:" + Thread.currentThread().id)
+    println("测试协程 ")
     //fullParas()
     //lazyStart()
     test11()
@@ -17,17 +19,31 @@ fun main(args: Array<String>) {
 
 fun test11() {
     //创建协程 注意  此方法实际上有三个参数滴
+
+    val scope = CoroutineScope(Job() + Dispatchers.Main)
+
     GlobalScope.launch {
-        //println("launch 协程开始运行1 ")
+        println("launch 协程开始运行1 ")
         doInCorountine()
     }.start()
 
+    scope.launch {
+        println("launch 协程开始运行2 ")
+        doInCorountine()
+    }
+
 }
 
+/**
+ * 挂起的方法 只能从协程 或者其他挂起的方法调用
+ */
 suspend fun doInCorountine() {
     Thread.sleep(3000)
+    println("threadId:" + Thread.currentThread().id)
     println("doInCorountine ")
+    // withContext(Dispatchers.IO)
 }
+
 
 /**
  * 写上全参数

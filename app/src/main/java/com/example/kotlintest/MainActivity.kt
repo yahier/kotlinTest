@@ -17,6 +17,8 @@ import androidx.core.os.postAtTime
 import androidx.core.text.htmlEncode
 import androidx.core.text.isDigitsOnly
 import androidx.core.view.postDelayed
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.*
 
 /**
  * ktx list
@@ -35,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         testCollections()
         testSp()
         testMix()
+        testCoroutine()
+        testCoroutine2()
     }
 
     /**
@@ -100,5 +104,64 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+
+    /**
+     *测试协程
+     * 备注 通常，您应使用 launch 从常规函数启动新协程，因为常规函数无法调用 await。只有在另一个协程内时，或在挂起函数内且正在执行并行分解时，才使用 async。
+     */
+    fun testCoroutine() {
+        val scopeIo = CoroutineScope(Job() + Dispatchers.IO)
+        println(" 1threadId is :" + Thread.currentThread().id)
+
+        //todo 启动协程的方式1 可启动新协程而不将结果返回给调用方
+        val job = scopeIo.launch {
+            // New coroutine that can call suspend functions
+            testTimeOutTask()
+        }
+
+
+        scopeIo.launch(Dispatchers.IO) {
+            Thread.sleep(3000)
+            tv1.text = "协程延迟后 来显示"
+        }
+
+
+        //todo 启动协程的方式2 启动一个新的协程，并允许您使用一个名为 await 的挂起函数返回结果
+        val deferred = scopeIo.async {
+
+        }
+
+
+        //job.cancel()
+    }
+
+
+    fun testCoroutine2() {
+        val scopeMain = CoroutineScope(Job() + Dispatchers.Main)
+
+        scopeMain.launch(Dispatchers.IO) {
+            Log.d("协程", "testCoroutine2---1")
+            Thread.sleep(3000)
+            Log.d("协程", "testCoroutine2---2")
+        }
+
+
+        //todo 启动协程的方式2 启动一个新的协程，并允许您使用一个名为 await 的挂起函数返回结果
+        val deferred = scopeMain.async {
+
+        }
+
+
+        //job.cancel()
+
+    }
+
+
+    //打印的threadId和上面一样的
+    suspend fun testTimeOutTask() {
+        Thread.sleep(3000)
+        Log.d("协程", "testTimeOutTask")
     }
 }

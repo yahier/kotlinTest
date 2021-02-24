@@ -16,6 +16,16 @@ fun main() {
     println(sum1(1, 2))
     println(sum2(1, 2))
     println(sum3(1, 2))
+
+    testFunc {
+        println("你想干啥呢")
+    }
+}
+
+
+fun testFunc(func: () -> Unit) {
+    func()
+
 }
 
 /**

@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
 
-    <TextView android:id="@+id/tv1"
-              android:background="#c0F1F1"
-              android:layout_width="wrap_content"
-              android:layout_marginLeft="20dp"
-              android:layout_marginTop="16dp"
-              app:layout_constraintLeft_toRightOf="parent"
-              android:layout_height="100dp"
-              android:gravity="center"
-              android:text="色彩1"
-              app:layout_constraintTop_toBottomOf="parent"
-              android:textSize="20dp" tools:ignore="MissingConstraints"/>
+    <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:background="#c0F1F1"
+            android:gravity="center"
+            android:text="色彩1"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:ignore="MissingConstraints" />
 
     <!--  为什么加上这个，反而不显示了  app:layout_constraintTop_toBottomOf="parent" -->
     <TextView
-            android:background="#cccccc"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
             android:id="@+id/tv2"
-            android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:background="#cccccc"
             android:gravity="center"
             android:text="色彩2"
-            app:layout_constraintLeft_toRightOf="@id/tv1"/>
+            android:textSize="20dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+            app:layout_constraintLeft_toRightOf="@id/tv1" />
 
     <TextView
-            android:visibility="gone"
-            android:gravity="center"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
             android:id="@+id/tv3"
-            app:layout_constraintTop_toBottomOf="@+id/tv2"
-            android:textSize="20dp"
-            android:background="#dddddd"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:background="#dddddd"
+            android:gravity="center"
             android:text="色彩3"
-            app:layout_constraintLeft_toRightOf="@id/tv1"/>
+            android:textSize="20dp"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+            app:layout_constraintLeft_toRightOf="@id/tv1"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

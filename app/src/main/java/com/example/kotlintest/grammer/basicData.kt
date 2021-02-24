@@ -5,6 +5,7 @@ package com.example.kotlintest.grammer
  */
 fun main(args: Array<String>) {
     test1()
+    showProgress(78)
 }
 
 /**
@@ -17,4 +18,10 @@ fun test1() {
     if (name!!.isBlank()) {
         println("name is empty")
     }
+}
+
+fun showProgress(progress: Int) {
+    /*** 约束范围 **/
+    val percent = progress.coerceIn(0, 90)
+    println("We're ${percent}% done!")
 }
